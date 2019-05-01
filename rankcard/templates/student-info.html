@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+
+{% block title %}Create New Student{% endblock %}
+
+
+{% block content %}
+<h3>Create New Student</h3>
+<form action="{% url 'create-student' %}" method="POST">
+    Name: <input id="name" name="name" type="text">
+    DOB: <input id="dob" name="dob" type="text">
+    Address: <input id="address1" name="address" type="text">
+<input type="submit">
+</form>
+{% endblock %}

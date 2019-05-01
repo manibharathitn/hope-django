@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rankcard.views import render_students, render_rankcard
+from rankcard.views import render_students, render_rankcard, render_student, create_student_details
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', render_students, name='student'),
-    path('student/<int:id>/rankcard/', render_rankcard, name="render-rankcard")
+    path('student/new/', render_student, name="render-student"),
+    path('student/create/', create_student_details, name="create-student"),
+    path('student/<int:id>/rankcard/', render_rankcard, name="render-rankcard"),
+
 ]
